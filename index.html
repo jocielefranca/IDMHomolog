@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDM - Inteligência de Dados e Mercado</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,8 +14,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         .container {
             max-width: 1200px;
@@ -26,14 +24,13 @@
 
         /* Header */
         header {
-            background: rgba(26, 32, 44, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 30px rgba(0,0,0,0.3);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
         nav {
             display: flex;
@@ -45,12 +42,6 @@
             font-size: 1.8rem;
             font-weight: bold;
             color: #667eea;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo i {
-            color: #667eea;
         }
         .nav-links {
             display: flex;
@@ -59,20 +50,17 @@
         }
         .nav-links a {
             text-decoration: none;
-            color: #f8f9fa;
+            color: #333;
             font-weight: 500;
             transition: color 0.3s;
-            padding: 8px 12px;
-            border-radius: 5px;
         }
         .nav-links a:hover {
             color: #667eea;
-            background: rgba(102, 126, 234, 0.1);
         }
 
         /* Hero Section */
         .hero {
-            height: 90vh;
+                       height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -82,6 +70,7 @@
             overflow: hidden;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin-bottom: 80px;
+
         }
         .hero::before {
             content: '';
@@ -90,27 +79,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(248, 249, 250, 0.1);
         }
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 800px;
-            padding: 0 20px;
         }
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease-out;
             color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease-out 0.3s both;
             color: white;
-            opacity: 0.9;
         }
         .cta-button {
             display: inline-block;
@@ -122,15 +108,10 @@
             font-weight: bold;
             transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 1s ease-out 0.6s both;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
         }
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #0069d9, #004a9c);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         /* Sections */
@@ -171,19 +152,17 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid #667eea;
         }
         .team-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         .team-card h3 {
             color: #667eea;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
         }
 
         /* Timeline */
@@ -232,13 +211,11 @@
             background: white;
             position: relative;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
-            border-left: 4px solid #667eea;
         }
         .timeline-content:hover {
             transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
         .timeline-content h3 {
             color: #667eea;
@@ -248,8 +225,6 @@
             color: #999;
             font-size: 0.9rem;
             font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
         }
 
         /* Benefits Grid */
@@ -266,87 +241,36 @@
             border-radius: 15px;
             text-align: center;
             transition: transform 0.3s;
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
         }
         .benefit-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
         }
         .benefit-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        /* KPIs Section - Nova seção conforme a imagem */
-        .kpi-highlights {
-            background: linear-gradient(135deg, #2c3e50, #1a2530);
-            padding: 100px 0;
-            color: white;
-        }
-        .kpi-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* KPIs */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
         .kpi-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            width: 260px;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
         }
-        .kpi-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(102,126,234,0.2) 0%, transparent 70%);
-            transform: rotate(30deg);
-            z-index: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+        .kpi-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
         }
-        .kpi-card:hover::before {
-            opacity: 1;
-        }
-        .kpi-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-        .kpi-value {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin: 15px 0;
-            color: white;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        .kpi-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-top: 10px;
-            color: #f8f9fa;
-            position: relative;
-            z-index: 1;
-        }
-        .kpi-card:nth-child(1) .kpi-value { color: #4CAF50; }
-        .kpi-card:nth-child(2) .kpi-value { color: #FFC107; }
-        .kpi-card:nth-child(3) .kpi-value { color: #2196F3; }
-        .kpi-card:nth-child(4) .kpi-value { color: #E91E63; }
 
         /* Training Modules */
         .training-modules {
@@ -359,14 +283,14 @@
             background: white;
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             border-left: 6px solid #667eea;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .module-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
         }
         
         .module-header {
@@ -504,29 +428,10 @@
 
         /* Footer */
         footer {
-            background: #1a2530;
+            background: #333;
             color: white;
             text-align: center;
-            padding: 3rem 0;
-        }
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #667eea;
+            padding: 2rem 0;
         }
 
         /* Animations */
@@ -540,11 +445,6 @@
                 transform: translateY(0);
             }
         }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
         .fade-in {
             opacity: 0;
             transform: translateY(50px);
@@ -554,28 +454,11 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .float-animation {
-            animation: float 4s ease-in-out infinite;
-        }
 
         /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .kpi-card {
-                width: calc(50% - 20px);
-                max-width: 300px;
-            }
-        }
-        
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
+                font-size: 2.5rem;
             }
             
             .timeline::after {
@@ -606,16 +489,7 @@
             
             .training-table th,
             .training-table td {
-                padding: 0.8rem;
-            }
-            
-            .kpi-card {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .section-title {
-                font-size: 2rem;
+                padding: 0.5rem;
             }
         }
     </style>
@@ -623,14 +497,14 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo"><i class="fas fa-chart-line"></i> IDM</div>
+            <div class="logo">IDM</div>
             <ul class="nav-links">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#structure"><i class="fas fa-sitemap"></i> Estrutura</a></li>
-                <li><a href="#roadmap"><i class="fas fa-road"></i> Roadmap</a></li>
-                <li><a href="#kpi-highlights"><i class="fas fa-chart-bar"></i> KPIs</a></li>
-                <li><a href="#training"><i class="fas fa-graduation-cap"></i> Capacitação</a></li>
-                <li><a href="#benefits"><i class="fas fa-star"></i> Benefícios</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#structure">Estrutura</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#benefits">Benefícios</a></li>
+                <li><a href="#training">Capacitação</a></li>
+                <li><a href="#kpis">KPIs</a></li>
             </ul>
         </nav>
     </header>
@@ -641,31 +515,6 @@
                 <h1>Inteligência de Dados e Mercado</h1>
                 <p>Transformando dados em insights estratégicos para acelerar o crescimento do negócio</p>
                 <a href="#structure" class="cta-button">Conheça Nossa Estrutura</a>
-            </div>
-        </section>
-
-        <!-- Nova seção de KPIs conforme a imagem -->
-        <section class="kpi-highlights">
-            <div class="container">
-                <h2 class="section-title" style="color: white;">Resultados Alcançados</h2>
-                <div class="kpi-container">
-                    <div class="kpi-card fade-in">
-                        <div class="kpi-value">88%</div>
-                        <div class="kpi-title">Revolução no SLA</div>
-                    </div>
-                    <div class="kpi-card fade-in">
-                        <div class="kpi-value">+80%</div>
-                        <div class="kpi-title">Explosão de Volume</div>
-                    </div>
-                    <div class="kpi-card fade-in">
-                        <div class="kpi-value">73%</div>
-                        <div class="kpi-title">Resolução Imediata</div>
-                    </div>
-                    <div class="kpi-card fade-in">
-                        <div class="kpi-value">37%</div>
-                        <div class="kpi-title">Performance SDRs</div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -703,7 +552,7 @@
                 <div class="timeline">
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <span class="timeline-date">09-20 Jun 2025</span>
+                            <div class="timeline-date">09-20 Jun 2025</div>
                             <h3>Sprint 0: Preparação e Discovery</h3>
                             <p><strong>Foco:</strong> Alinhamento estratégico com stakeholders, mapeamento das necessidades comerciais e definição da arquitetura de dados para suportar as análises</p>
                             <p><strong>Entregáveis:</strong> Kickoff, entrevistas com stakeholders, mapeamento de fontes de dados e definição do backlog inicial</p>
@@ -711,7 +560,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <span class="timeline-date">23 Jun - 04 Jul 2025</span>
+                            <div class="timeline-date">23 Jun - 04 Jul 2025</div>
                             <h3>Sprint 1: MVP Comercial</h3>
                             <p><strong>Foco:</strong> Desenvolvimento das primeiras análises comerciais essenciais - dashboards de performance de vendas, acompanhamento do funil de conversão e identificação de oportunidades em risco</p>
                             <p><strong>Entregáveis:</strong> Dashboard de KPIs de conversão, análise de performance por consultor e relatórios de oportunidades em risco</p>
@@ -719,7 +568,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <span class="timeline-date">07-18 Jul 2025</span>
+                            <div class="timeline-date">07-18 Jul 2025</div>
                             <h3>Sprint 2: Aprofundamento + Marketing</h3>
                             <p><strong>Foco:</strong> Evolução das análises comerciais com modelos preditivos e integração dos dados de marketing para visão completa da jornada do cliente desde a geração de leads até o fechamento</p>
                             <p><strong>Entregáveis:</strong> Modelo de propensão de fechamento, integração marketing-vendas e dashboard de origem de leads</p>
@@ -727,7 +576,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <span class="timeline-date">21 Jul - 01 Ago 2025</span>
+                            <div class="timeline-date">21 Jul - 01 Ago 2025</div>
                             <h3>Sprint 3: Relacionamento e Repasse</h3>
                             <p><strong>Foco:</strong> Expansão das análises para pós-venda, incluindo satisfação de clientes, NPS e otimização do processo de repasse para crédito, criando visão integrada de toda a jornada do cliente</p>
                             <p><strong>Entregáveis:</strong> Dashboard de satisfação, NPS, análise de gargalos no repasse e indicadores de crédito</p>
@@ -735,7 +584,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <span class="timeline-date">04-15 Ago 2025</span>
+                            <div class="timeline-date">04-15 Ago 2025</div>
                             <h3>Sprint 4: Modelos Preditivos</h3>
                             <p><strong>Foco:</strong> Implementação de modelos avançados de machine learning para propensão de compra e previsão de receita, automatizando insights estratégicos para apoiar decisões de negócio</p>
                             <p><strong>Entregáveis:</strong> Propensão a compra, previsão de receita e automatização de insights para comercial</p>
@@ -743,7 +592,7 @@
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-content">
-                            <span class="timeline-date">18-29 Ago 2025</span>
+                            <div class="timeline-date">18-29 Ago 2025</div>
                             <h3>Sprint 5: Consolidação e Expansão</h3>
                             <p><strong>Foco:</strong> Capacitação das equipes para uso autônomo das ferramentas, criação de dashboards executivos consolidados e mensuração dos impactos gerados nos KPIs de negócio</p>
                             <p><strong>Entregáveis:</strong> Capacitação das equipes, dashboard executivo e mensuração de impactos nos KPIs</p>
@@ -833,10 +682,88 @@
                                         <td><span class="duration-badge">4h</span></td>
                                         <td>Facilitador externo / Interno</td>
                                     </tr>
+                                    <tr>
+                                        <td>Métricas Ágeis e Quadros de Gestão Visual</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">4h</span></td>
+                                        <td>Ferramentas de gestão visual</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Planejamento e Estimativas Ágeis</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop + exercícios</span></td>
+                                        <td><span class="duration-badge">6h</span></td>
+                                        <td>Templates de planning poker</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Papel do Product Owner</td>
+                                        <td>Supervisora</td>
+                                        <td><span class="format-badge">Treinamento específico</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Mentora</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coaching Ágil e Resolução de Impedimentos</td>
+                                        <td>Supervisora</td>
+                                        <td><span class="format-badge">Sessões de coaching</span></td>
+                                        <td><span class="duration-badge">6h</span></td>
+                                        <td>Mentora</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>   <!-- Módulo 2: Fundamentos de Dados -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">📊</div>
+                            <div class="module-title">Módulo 2: Fundamentos de Dados e Análise</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fundamentos de Análise de Dados</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">6h</span></td>
+                                        <td>Apostila, datasets de exemplo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Visualização de Dados e Storytelling</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estatística Aplicada a Negócios</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Curso online + projeto</span></td>
+                                        <td><span class="duration-badge">30h</span></td>
+                                        <td>Acesso plataforma online, dados internos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modelos de Atribuição e Funil de Vendas</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Cases do mercado imobiliário</td>
+                                              </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
 
                     <!-- Módulo 3: Ferramentas e Tecnologias -->
                     <div class="module-card fade-in">
@@ -877,11 +804,199 @@
                                         <td><span class="duration-badge">16h</span></td>
                                         <td>Contratação de especialista</td>
                                     </tr>
+                                    <tr>
+                                        <td>Python para Análise de Dados</td>
+                                        <td>Analista Sênior</td>
+                                        <td><span class="format-badge">Curso online + mentoria</span></td>
+                                        <td><span class="duration-badge">40h</span></td>
+                                        <td>Ambiente de desenvolvimento</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ferramentas de Gestão Ágil (Jira/Trello)</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop prático</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Acesso às ferramentas</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    
+
+                    <!-- Módulo 4: Inteligência de Mercado -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">🎯</div>
+                            <div class="module-title">Módulo 4: Inteligência de Mercado e Negócios</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fundamentos do Mercado Imobiliário</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Especialista do negócio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KPIs e Métricas do Setor Imobiliário</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Benchmarks do setor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Customer Journey e Experiência do Cliente</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Análise Competitiva e Market Intelligence</td>
+                                        <td>Analista Sênior e Supervisora</td>
+                                        <td><span class="format-badge">Curso online</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Acesso plataforma online</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Precificação Estratégica no Setor Imobiliário</td>
+                                        <td>Supervisora</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Módulo 5: IA e Analytics Avançado -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">🤖</div>
+                            <div class="module-title">Módulo 5: Inteligência Artificial e Analytics Avançado</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fundamentos de IA para Negócios</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop externo</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Machine Learning Aplicado a Vendas</td>
+                                        <td>Analista Sênior e Supervisora</td>
+                                        <td><span class="format-badge">Curso online</span></td>
+                                        <td><span class="duration-badge">20h</span></td>
+                                        <td>Acesso plataforma online</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Introdução a Modelos Preditivos</td>
+                                        <td>Analista Sênior</td>
+                                        <td><span class="format-badge">Workshop externo + projeto</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Contratação de especialista</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IA Generativa para Análise de Dados</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop interno</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Acesso a ferramentas de IA</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Integração de IA com Ferramentas de BI</td>
+                                        <td>Analista Sênior</td>
+                                        <td><span class="format-badge">Workshop prático</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Power BI, Python</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Treinamentos Práticos Integrados -->
+                    <div class="module-card fade-in">
+                        <div class="module-header">
+                            <div class="module-icon">⚡</div>
+                            <div class="module-title">Treinamentos Práticos Integrados (Ágil + Dados)</div>
+                        </div>
+                        <div class="training-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Treinamento</th>
+                                        <th>Público-Alvo</th>
+                                        <th>Formato</th>
+                                        <th>Duração</th>
+                                        <th>Recursos Necessários</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Aplicando Ágil em Projetos de Dados</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Workshop prático</span></td>
+                                        <td><span class="duration-badge">8h</span></td>
+                                        <td>Estudo de caso real da empresa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sprint de Análise de Dados</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Prática supervisionada</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Dados reais, ambiente de análise</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Criação de MVP de Dashboard</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Projeto prático</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Power BI, dados comerciais</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hackathon de Dados - Problema Real</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Desafio prático</span></td>
+                                        <td><span class="duration-badge">16h</span></td>
+                                        <td>Problema de negócio específico</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prática de Review e Retrospectiva</td>
+                                        <td>Toda equipe</td>
+                                        <td><span class="format-badge">Simulação</span></td>
+                                        <td><span class="duration-badge">4h</span></td>
+                                        <td>Ambiente de trabalho</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                     <!-- Recursos para Agilidade -->
                     <div class="resources-section fade-in">
                         <h3 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">🛠️ Recursos para Agilidade</h3>
@@ -919,18 +1034,39 @@
                 </div>
             </div>
         </section>
+
+        <section id="kpis">
+            <div class="container">
+                <h2 class="section-title">Ganhos Esperados</h2>
+                <div class="kpis">
+                    <div class="kpi-card fade-in">
+                        <div class="kpi-number">📊</div>
+                        <h3>Crescimento de Receita</h3>
+                        <p>Estratégias direcionadas por dados e otimização de precificação</p>
+                    </div>
+                    <div class="kpi-card fade-in">
+                        <div class="kpi-number">🔻</div>
+                        <h3>Redução de Distratos</h3>
+                        <p>Detecção precoce e recuperação eficiente de clientes em risco de cancelamento e financeiro</p>
+                    </div>
+                    <div class="kpi-card fade-in">
+                        <div class="kpi-number">⚡</div>
+                        <h3>Eficiência Operacional</h3>
+                        <p>Redução do CAC e aumento da produtividade comercial</p>
+                    </div>
+                    <div class="kpi-card fade-in">
+                        <div class="kpi-number">🏃‍♂️</div>
+                        <h3>Agilidade Estratégica</h3>
+                        <p>Identificação rápida de tendências e ciclos de ajuste mais curtos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="container footer-content">
-            <div class="logo"><i class="fas fa-chart-line"></i> IDM</div>
+        <div class="container">
             <p>&copy; 2025 Inteligência de Dados e Mercado. Transformando dados em resultados.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
         </div>
     </footer>
 
@@ -1005,17 +1141,11 @@
                 }
             });
         });
-        
-        // Add floating animation to KPI cards on hover
-        document.querySelectorAll('.kpi-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.classList.add('float-animation');
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.classList.remove('float-animation');
-            });
-        });
     </script>
 </body>
 </html>
+                            </table>
+                        </div>
+                    </div>
+
+                  
